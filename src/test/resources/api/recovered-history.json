@@ -1,0 +1,91 @@
+{
+  "data": [
+    {
+      "recovered": 436,
+      "date": "2023-05-09T00:00:00.000Z"
+    },
+    {
+      "recovered": 370,
+      "date": "2023-05-10T00:00:00.000Z"
+    },
+    {
+      "recovered": 309,
+      "date": "2023-05-11T00:00:00.000Z"
+    },
+    {
+      "recovered": 72,
+      "date": "2023-05-12T00:00:00.000Z"
+    },
+    {
+      "recovered": 6,
+      "date": "2023-05-13T00:00:00.000Z"
+    },
+    {
+      "recovered": 5,
+      "date": "2023-05-14T00:00:00.000Z"
+    },
+    {
+      "recovered": 84,
+      "date": "2023-05-15T00:00:00.000Z"
+    },
+    {
+      "recovered": 16,
+      "date": "2023-05-16T00:00:00.000Z"
+    },
+    {
+      "recovered": 18,
+      "date": "2023-05-17T00:00:00.000Z"
+    },
+    {
+      "recovered": 0,
+      "date": "2023-05-18T00:00:00.000Z"
+    },
+    {
+      "recovered": 3,
+      "date": "2023-05-19T00:00:00.000Z"
+    },
+    {
+      "recovered": 0,
+      "date": "2023-05-20T00:00:00.000Z"
+    },
+    {
+      "recovered": 0,
+      "date": "2023-05-21T00:00:00.000Z"
+    },
+    {
+      "recovered": 3,
+      "date": "2023-05-22T00:00:00.000Z"
+    },
+    {
+      "recovered": 2,
+      "date": "2023-05-23T00:00:00.000Z"
+    },
+    {
+      "recovered": 2,
+      "date": "2023-05-24T00:00:00.000Z"
+    },
+    {
+      "recovered": 0,
+      "date": "2023-05-25T00:00:00.000Z"
+    },
+    {
+      "recovered": 0,
+      "date": "2023-05-26T00:00:00.000Z"
+    },
+    {
+      "recovered": 0,
+      "date": "2023-05-27T00:00:00.000Z"
+    },
+    {
+      "recovered": 0,
+      "date": "2023-05-28T00:00:00.000Z"
+    }
+  ],
+  "meta": {
+    "source": "Robert Koch-Institut",
+    "contact": "Marlon Lueckert (m.lueckert@me.com)",
+    "info": "https://github.com/marlon360/rki-covid-api",
+    "lastUpdate": "2023-05-29T08:31:11.000Z",
+    "lastCheckedForUpdate": "2023-05-29T12:30:40.373Z"
+  }
+}

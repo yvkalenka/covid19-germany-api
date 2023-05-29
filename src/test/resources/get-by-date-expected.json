@@ -1,0 +1,32 @@
+[
+  {
+    "cases": 675,
+    "recovered": 3,
+    "date": "2023-05-19"
+  },
+  {
+    "cases": 116,
+    "recovered": 0,
+    "date": "2023-05-20"
+  },
+  {
+    "cases": 74,
+    "recovered": 0,
+    "date": "2023-05-21"
+  },
+  {
+    "cases": 1281,
+    "recovered": 3,
+    "date": "2023-05-22"
+  },
+  {
+    "cases": 886,
+    "recovered": 2,
+    "date": "2023-05-23"
+  },
+  {
+    "cases": 418,
+    "recovered": 2,
+    "date": "2023-05-24"
+  }
+]
