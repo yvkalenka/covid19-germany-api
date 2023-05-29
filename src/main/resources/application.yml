@@ -1,0 +1,13 @@
+server.port: ${SERVER_PORT:8090}
+
+spring:
+  application:
+    name: covid19-germany-api
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+
+remote:
+  corona-zahlen:
+    url: https://api.corona-zahlen.org/germany/history
