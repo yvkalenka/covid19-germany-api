@@ -59,6 +59,11 @@ public class StatisticsCacheService {
         });
     }
 
+    /**
+     * Uses {@link #findByRange(LocalDate, LocalDate)} to get required data from cache and process it on each request.
+     * As an alternative - storing own objects for {@link StatisticByMonth} entries to increase performance. On current
+     * step this is not required in favor to decrease complexity of cache objects storing strategy.
+     */
     public List<StatisticByMonth> findByLastMonths(int num) {
         // Initially remote api does not provide the info about recent 2 days.
         var toDate = LocalDate.now().minusDays(2);
@@ -97,13 +102,16 @@ public class StatisticsCacheService {
     }
 
     private void mergeAndPersist(Map<LocalDate, CaseData> casesDataMap, Map<LocalDate, RecoveredData> recoveredDataMap) {
-        casesDataMap.forEach((date, casesData) -> {
-            var recoveredData = recoveredDataMap.get(date);
-            if (isNotEmpty(recoveredData)) {
-                // Adding entries with present both cases and recoveries data only.
+        var keys = new ArrayList<>(casesDataMap.keySet());
+        keys.addAll(recoveredDataMap.keySet());
+        keys.forEach(key -> {
+            var casesData = casesDataMap.get(key);
+            var recoveredData = recoveredDataMap.get(key);
+            // Adding entries with present both cases and recoveries data only.
+            if (isNotEmpty(casesData) && isNotEmpty(recoveredData)) {
                 var statisticsByDate = statisticsConverter.applyForDateSpecific(casesData, recoveredData);
                 statisticsRedisTemplate.opsForZSet()
-                        .addIfAbsent(STATISTICS_KEY_PREFIX, statisticsByDate, date.toEpochDay());
+                        .addIfAbsent(STATISTICS_KEY_PREFIX, statisticsByDate, key.toEpochDay());
             }
         });
     }
