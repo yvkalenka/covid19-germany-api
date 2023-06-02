@@ -8,7 +8,7 @@ import com.inws.cvd.client.dto.RecoveredDataResponse.RecoveredData;
 import com.inws.cvd.converter.StatisticsConverter;
 import com.inws.cvd.dto.StatisticByDate;
 import com.inws.cvd.dto.StatisticByMonth;
-import com.inws.cvd.exception.NoDataAvailable;
+import com.inws.cvd.exception.NoDataAvailableException;
 import com.inws.cvd.validator.DateValidator;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
@@ -53,7 +53,7 @@ public class StatisticsCacheService {
         }
         // Data can not be empty after seeding. This may indicate of some internal unhandled issues only.
         if (foundRecords.isEmpty()) {
-            throw new NoDataAvailable("Data is unavailable due internal reasons. Please contact support team.");
+            throw new NoDataAvailableException("Data is unavailable due internal reasons. Please contact support team.");
         }
         return objectMapper.convertValue(foundRecords, new TypeReference<>() {
         });

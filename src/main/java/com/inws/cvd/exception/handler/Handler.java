@@ -2,7 +2,7 @@ package com.inws.cvd.exception.handler;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.inws.cvd.exception.ErrorResponse;
-import com.inws.cvd.exception.NoDataAvailable;
+import com.inws.cvd.exception.NoDataAvailableException;
 import jakarta.validation.ValidationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -29,8 +29,8 @@ public class Handler extends ResponseEntityExceptionHandler {
 
     // This is to make api available even if data is missing due to internal seeding error or caching system unavailability.
     // Response code may be changed to 5xx due additional requirements and other needs.
-    @ExceptionHandler(NoDataAvailable.class)
-    public ResponseEntity<ErrorResponse> handleNoDataAvailableException(NoDataAvailable e) {
+    @ExceptionHandler(NoDataAvailableException.class)
+    public ResponseEntity<ErrorResponse> handleNoDataAvailableException(NoDataAvailableException e) {
         return new ResponseEntity<>(toErrorResponse(e), NOT_FOUND);
     }
 

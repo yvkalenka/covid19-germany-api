@@ -27,7 +27,8 @@ public class StatisticsConverter {
     }
 
     public List<StatisticByMonth> applyForMonthSpecific(List<StatisticByDate> statisticByDates) {
-        var mapByYearMonth = statisticByDates.stream()
+        var mapByYearMonth = statisticByDates
+                .stream()
                 .collect(groupingBy(entry -> YearMonth.from(parse(entry.date())), HashMap::new, toList()));
 
         return mapByYearMonth.entrySet()

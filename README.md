@@ -19,7 +19,7 @@ This application has the primary responsibility of performing covid19 statistics
 
 1) Check that you have installed jdk at least 17 version.
 2) Run docker-compose file at `./docker-compose.yml` to start Redis
-3) Run "micronaut" application:
+3) Run "Spring" application:
     - Console:
       `spring_profiles_active=local ./gradlew run`
     - Idea:
@@ -27,6 +27,8 @@ This application has the primary responsibility of performing covid19 statistics
 
 4) Application is running on port: `8090`.
 5) Check Swagger API is available: http://localhost:8090/swagger-ui/index.html#/
+6) Run sample request: curl --location 'localhost:8090/api/v1/statistics?fromDate=20.05.2023&toDate=25.05.2023' or
+   curl --location 'localhost:8090/api/v1/statistics/months/2'
 
 ## Branching and deployment
 
